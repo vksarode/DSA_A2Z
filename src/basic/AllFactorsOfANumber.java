@@ -1,15 +1,15 @@
-import patterns.Pattern;
+package basic;
 
-import java.util.HashSet;
 import java.util.Scanner;
-import java.util.Set;
 import java.util.TreeSet;
 
+/**
+ * @author Vijaya Kumar Sarode
+ */
 public class AllFactorsOfANumber {
     public static void main(String[] args) {
-        System.out.println("AllFactorsOfANumber.");
+        System.out.println("basic.AllFactorsOfANumber.");
 
-        Pattern p = new Pattern();
         Scanner scanner = new Scanner(System.in);
         System.out.print("please enter N:");
         long n = scanner.nextLong();

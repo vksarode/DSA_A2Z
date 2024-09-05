@@ -1,4 +1,4 @@
-import patterns.Pattern;
+package basic;
 
 import java.util.Scanner;
 import java.util.Set;
@@ -7,9 +7,7 @@ import java.util.TreeSet;
 public class PrimeNumber {
     public static void main(String[] args) {
         PrimeNumber primeNumber = new PrimeNumber();
-        System.out.println("PrimeNumber.");
-
-        Pattern p = new Pattern();
+        System.out.println("PrimeNumber Example");
         Scanner scanner = new Scanner(System.in);
         System.out.print("please enter N:");
         long n = scanner.nextLong();
