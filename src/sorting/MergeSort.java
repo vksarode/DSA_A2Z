@@ -8,54 +8,54 @@ public class MergeSort {
     public static void main(String[] args) {
 
         int n = 20;
-        int[] a = new int[n];
-//        a[0] = 5;a[1] = 4;a[2] = 3;a[3] = 2;a[4] = 1;
+        int[] nums = new int[n];
+//        nums[0] = 5;nums[1] = 4;nums[2] = 3;nums[3] = 2;nums[4] = 1;
 
         for (int i = 0; i < n; i++) {
-            a[i] = RandomGenerator.getDefault().nextInt(1000 * 10) + RandomGenerator.getDefault().nextInt(100 * 10) + RandomGenerator.getDefault().nextInt(200 * 10);
+            nums[i] = RandomGenerator.getDefault().nextInt(1000 * 10) + RandomGenerator.getDefault().nextInt(100 * 10) + RandomGenerator.getDefault().nextInt(200 * 10);
         }
         System.out.println("Before.");
 
-        Arrays.stream(a).forEach(System.out::println);
+        Arrays.stream(nums).forEach(System.out::println);
 
-        a = mergeSort(a);
+        nums = sortArray(nums);
 
         //print after sort
         System.out.println("After.");
-        Arrays.stream(a).forEach(System.out::println);
+        Arrays.stream(nums).forEach(System.out::println);
 
     }
 
-    private static int[] mergeSort(int[] a) {
+    private static int[] sortArray(int[] nums) {
 
         //base condition
-        if (a.length <= 1) {
-            return a;
+        if (nums.length <= 1) {
+            return nums;
         }
         // length = 5, mid = 2,
         //split into 2 arrays
-        int mid = a.length / 2;
+        int mid = nums.length / 2;
         int firstStart = 0;
         int firstEnd = mid - 1; //  2 -1 = 1
 
         int secondStart = mid;
-        int secondEnd = a.length - secondStart;  // 5 - 2 = 3
+        int secondEnd = nums.length - secondStart;  // 5 - 2 = 3
 
         int firstArray[] = new int[mid];
         int secondArray[] = new int[secondEnd];
 
         //copy elements from original array into split arrays
         for (int i = 0; i < firstArray.length; i++) {
-            firstArray[i] = a[i];
+            firstArray[i] = nums[i];
         }
 
         for (int i = 0; i < secondArray.length; i++) {
-            secondArray[i] = a[i + secondStart];
+            secondArray[i] = nums[i + secondStart];
         }
 
 
-        firstArray = mergeSort(firstArray);
-        secondArray = mergeSort(secondArray);
+        firstArray = sortArray(firstArray);
+        secondArray = sortArray(secondArray);
 
         int[] mergedArray = new int[firstArray.length + secondArray.length];
         int index = 0;
